@@ -1,0 +1,32 @@
+{
+  "name": "sass-base-frame.css",
+  "version": "1.0.0",
+  "description": "A lightweight front-end framework that provides functionality without the bloat.",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "lightweight"
+  ],
+  "engines": {
+    "node": "<=4.2.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "cssmin": "^0.4.3",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.3.2",
+    "stylestats": "^6.0.0",
+    "watch": "^0.16.0"
+  },
+  "scripts": {
+    "build": "node-sass src/styles/main.scss dist/main.css | postcss --use autoprefixer < dist/main.css -b | cssmin > dist/main.min.css",
+    "build:watch": "watch \"npm run build\" src/styles",
+    "stats": "stylestats dist/main.css"
+  }
+}
