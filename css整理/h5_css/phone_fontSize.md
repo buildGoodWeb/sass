@@ -69,6 +69,7 @@ js设置html字体大小代码：
 	在devicePixelRatio为3的时候，scale为0.3333
 	
 通过js设置viewport的方法如下：
+
 	var scale = 1 / devicePixelRatio;
 	document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
 
