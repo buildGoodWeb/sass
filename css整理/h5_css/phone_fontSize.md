@@ -2,6 +2,10 @@
 
 http://www.html5cn.org/article-9159-1.html
 
+###相关知识了解
+
+*设备的物理分辨率(devicePixelRatio * scale)，在scale为1的情况下，device-width = 设备的物理分辨率/devicePixelRatio* 。
+
 ### 网易做法
 
 html标签下的font-size属性分析：
