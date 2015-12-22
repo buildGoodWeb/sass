@@ -4,7 +4,9 @@ http://www.html5cn.org/article-9159-1.html
 
 ###相关知识了解
 
-*设备的物理分辨率(devicePixelRatio * scale)，在scale为1的情况下，device-width = 设备的物理分辨率/devicePixelRatio* 。
+1,*设备的物理分辨率(devicePixelRatio * scale)，在scale为1的情况下，device-width = 设备的物理分辨率/devicePixelRatio。* 
+
+2,*devicePixelRatio称为设备像素比，每款设备的devicePixelRatio都是已知，并且不变的，目前高清屏，普遍都是2，不过还有更高的，比如2.5, 3 等 。*
 
 ### 网易做法
 
@@ -58,5 +60,24 @@ js设置html字体大小代码：
 
 	
 ### 淘宝做法
+
+> 淘宝触屏版布局的前提就是viewport的scale根据devicePixelRatio动态设置：
+
+> 淘宝的设计稿是基于750的横向分辨率
+
+	在devicePixelRatio为2的时候，scale为0.5
+	在devicePixelRatio为3的时候，scale为0.3333
+	
+通过js设置viewport的方法如下：
+	var scale = 1 / devicePixelRatio;
+	document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+	
+html元素的font-size的计算公式，font-size = deviceWidth / 10
+
+	document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+	
+淘宝也设置了一个临界点，当设备竖着时横向物理分辨率大于1080时，html的font-size就不会变化了，原因也是一样的，分辨率已经可以去访问电脑版页面了。	
+	
+	
 
 
