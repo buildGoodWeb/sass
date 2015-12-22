@@ -71,7 +71,7 @@ js设置html字体大小代码：
 通过js设置viewport的方法如下：
 	var scale = 1 / devicePixelRatio;
 	document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
-	
+
 html元素的font-size的计算公式，font-size = deviceWidth / 10
 
 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
